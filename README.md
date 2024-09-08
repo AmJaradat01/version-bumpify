@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-A Node.js CLI tool to automatically update the version in `package.json`, `package-lock.json`, and the version badge in `README.md.
+A Node.js CLI tool to automatically update the version in `package.json`, `package-lock.json`, and the version badge in `README.md`.
 
 ## Features
 
