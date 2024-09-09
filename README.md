@@ -1,6 +1,6 @@
 # Version Bumpify
 
-![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-v1.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 A Node.js CLI tool to automatically update the version in `package.json`, `package-lock.json`, and the version badge in `README.md`.
@@ -64,7 +64,7 @@ This will execute the test cases to ensure the functionality of the bumpify.
 
 ## Contributing
 
-Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
+Contributions are welcome! For detailed contribution guidelines, please refer to the [CONTRIBUTING](CONTRIBUTING) file.
 
 ## License
 
