@@ -1,7 +1,10 @@
 # Version Bumpify
 
-![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Version](https://img.shields.io/badge/version-v1.1.1-blue.svg)
+![npm](https://img.shields.io/npm/v/version-bumpify)
+![npm](https://img.shields.io/npm/dm/version-bumpify)
+![License](https://img.shields.io/npm/l/version-bumpify)
+[![GitLab CI status](https://gitlab.com/amjaradat01/version-bumpify/badges/main/pipeline.svg)](https://gitlab.com/AmJaradat01/version-bumpify/-/pipelines)
 
 A Node.js CLI tool to automatically update the version in `package.json`, `package-lock.json`, and the version badge in `README.md`.
 

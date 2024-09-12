@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { updatePackageFile, updateReadme } = require('../lib/helpers');
+const { updatePackageFile, updateReadme } = require('../lib/helpers.js');
 
 const newVersion = process.argv[2];
 if (!newVersion) {

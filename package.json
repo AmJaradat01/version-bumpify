@@ -1,12 +1,12 @@
 {
   "name": "version-bumpify",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A Node.js CLI tool to automatically update the version in package.json, package-lock.json, and the version badge in README.md",
   "bin": {
     "bumpify": "./bin/bumpify.js"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
     "README.md"
   ],
   "devDependencies": {
+    "jest": "^29.7.0",
     "mocha": "10.1.0"
   }
 }
