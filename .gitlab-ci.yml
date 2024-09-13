@@ -7,7 +7,7 @@ variables:
   NODE_ENV: 'test'
   NODE_VERSION: '18'
   NPM_TOKEN: $CI_JOB_TOKEN
-  NPM_REGISTRY_URL: https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
+  NPM_REGISTRY_URL: "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/npm/"
 
 cache:
   paths:
