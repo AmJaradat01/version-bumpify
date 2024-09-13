@@ -1,6 +1,6 @@
 # Version Bumpify
 
-![Version](https://img.shields.io/badge/version-v1.1.11-blue.svg)
+![Version](https://img.shields.io/badge/version-v1.1.12-blue.svg)
 ![npm](https://img.shields.io/npm/v/version-bumpify)
 ![npm](https://img.shields.io/npm/dm/version-bumpify)
 ![License](https://img.shields.io/npm/l/version-bumpify)
