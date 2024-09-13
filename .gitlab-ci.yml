@@ -53,10 +53,11 @@ publish:
 
 release:
   stage: release
-  image: curlimages/curl:7.68.0
+  image: node:${NODE_VERSION}
   only:
     - tags
   script:
+    - apt-get update && apt-get install -y curl
     - |
       curl --request POST \
       --header "PRIVATE-TOKEN: $GITLAB_API_TOKEN" \
