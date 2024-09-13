@@ -1,10 +1,13 @@
 stages:
   - install
   - test
+  - publish
 
 variables:
   NODE_ENV: 'test'
-  NODE_VERSION: '18'  # Adjust to match your Node.js version
+  NODE_VERSION: '18'
+  NPM_TOKEN: $CI_JOB_TOKEN
+  NPM_REGISTRY_URL: https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
 
 cache:
   paths:
@@ -32,3 +35,12 @@ test:
     - install_dependencies
   script:
     - npm test
+
+publish:
+  stage: publish
+  image: node:${NODE_VERSION}
+  only:
+    - tags
+  script:
+    - echo "//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+    - npm publish --registry ${NPM_REGISTRY_URL}
