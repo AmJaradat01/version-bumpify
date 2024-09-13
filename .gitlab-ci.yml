@@ -54,6 +54,14 @@ release:
   stage: release
   only:
     - tags  # Ensure the job only runs for tag-based pipelines
+  before_script:
+    - 'which node'
+    - node --version
+    - npm --version
+    # Install release-cli
+    - curl -o release-cli-linux-amd64.tar.gz -L "https://gitlab.com/gitlab-org/release-cli/-/jobs/artifacts/v0.16.0/download?job=build"
+    - tar -xzf release-cli-linux-amd64.tar.gz -C /usr/local/bin
+    - chmod +x /usr/local/bin/release-cli
   script:
     - echo "Creating release for tag ${CI_COMMIT_TAG}"
   release:
