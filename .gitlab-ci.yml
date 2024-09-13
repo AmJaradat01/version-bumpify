@@ -2,12 +2,14 @@ stages:
   - install
   - test
   - publish
-  - release  # Stage to create the release
+  - release
 
 variables:
   NODE_ENV: 'test'
   NODE_VERSION: '18'
-  GITLAB_API_TOKEN: $GITLAB_API_TOKEN  # Ensure the PAT with the `api` scope is used for publishing, but it's not required for release creation.
+  NPM_TOKEN: $CI_JOB_TOKEN
+  NPM_REGISTRY_URL: "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/npm/"
+  GITLAB_API_TOKEN: $CI_JOB_TOKEN
 
 cache:
   paths:
@@ -52,13 +54,14 @@ publish:
 release:
   stage: release
   only:
-    - tags
+    - tags  # Ensure the job only runs for tag-based pipelines
+  script:
+    - echo "Creating release for tag ${CI_COMMIT_TAG}"
   release:
     name: "Release v${CI_COMMIT_TAG}"
     tag_name: "${CI_COMMIT_TAG}"
     description: "Automated release for version ${CI_COMMIT_TAG}"
     ref: "${CI_COMMIT_TAG}"
-    milestones: []  # Add milestones if necessary
     assets:
       links:
         - name: "Download Source Code"
