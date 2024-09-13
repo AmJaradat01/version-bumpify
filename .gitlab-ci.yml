@@ -12,6 +12,7 @@ variables:
   NPM_TOKEN: $CI_JOB_TOKEN
   NPM_REGISTRY_URL: "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/npm/"
   GITLAB_API_TOKEN: $CI_JOB_TOKEN
+  PACKAGE_REGISTRY_URL: "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/generic"
 
 cache:
   paths:
@@ -51,23 +52,18 @@ publish:
     expire_in: 1 hour
 
 release:
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
   stage: release
-  only:
-    - tags  # Ensure the job only runs for tag-based pipelines
-  before_script:
-    - 'which node'
-    - node --version
-    - npm --version
-    # Install release-cli
-    - curl -L --output release-cli "https://gitlab.com/gitlab-org/release-cli/-/releases/v0.17.0/downloads/release-cli-linux-amd64"
-    - chmod +x release-cli
-    - mv release-cli /usr/local/bin/
+  needs:
+    - publish
+  rules:
+    - if: '$CI_COMMIT_TAG'
   script:
     - echo "Creating release for tag ${CI_COMMIT_TAG}"
   release:
-    name: "Release v${CI_COMMIT_TAG}"
-    tag_name: "${CI_COMMIT_TAG}"
+    name: "Release ${CI_COMMIT_TAG}"
     description: "Automated release for version ${CI_COMMIT_TAG}"
+    tag_name: "${CI_COMMIT_TAG}"
     ref: "${CI_COMMIT_TAG}"
     assets:
       links:
