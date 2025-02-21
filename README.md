@@ -1,30 +1,37 @@
 # Version Bumpify
 
-![Version](https://img.shields.io/badge/version-v1.1.14-blue.svg)
+![Version](https://img.shields.io/badge/version-v1.2.0-blue.svg)
 ![npm](https://img.shields.io/npm/v/version-bumpify)
 ![npm](https://img.shields.io/npm/dm/version-bumpify)
 ![License](https://img.shields.io/npm/l/version-bumpify)
 [![GitLab CI status](https://gitlab.com/amjaradat01/version-bumpify/badges/main/pipeline.svg)](https://gitlab.com/AmJaradat01/version-bumpify/-/pipelines)
 
-A Node.js CLI tool to automatically update the version in `package.json`, `package-lock.json`, and the version badge in `README.md`.
+A **Node.js CLI tool** to automatically update:
+- `package.json` and `package-lock.json` versions
+- **Multiple version badges** in `README.md` (supports Shields.io, Badgen.net, Fury.io, and Nodei.co)
 
-## Features
+## Features 🚀
 
-- Automatically updates the `version` field in `package.json` and `package-lock.json`.
-- Updates the version badge in `README.md` (Shields.io style).
-- Simple CLI tool with easy integration into any Node.js project.
+✔ **Semantic Versioning**: Ensures valid version updates (e.g., `1.2.3`, `2.0.0-alpha`)  
+✔ **Automatic Updates**: Updates `package.json`, `package-lock.json`, and README badges  
+✔ **Multi-Badge Support**: Works with Shields.io, Badgen.net, Fury.io, and Nodei.co  
+✔ **Simple CLI Usage**: Run a single command to bump the version  
+
+---
 
 ## Installation
 
-To install globally:
+Install globally via npm:
 
 ```bash
 npm install -g version-bumpify
 ```
 
-## Usage
+---
 
-To update the version across `package.json`, `package-lock.json`, and the version badge in `README.md`:
+## Usage 🛠️
+
+Run the following command to bump your project version:
 
 ```bash
 bumpify <new_version>
@@ -36,43 +43,30 @@ Example:
 bumpify 2.0.2
 ```
 
-This command will:
+This will:
+✅ Update **`package.json`** and **`package-lock.json`** to `2.0.2`  
+✅ Update **multiple version badges** in `README.md`
 
-- Update `package.json` and `package-lock.json` to version `2.0.2`.
-- Update the Shields.io version badge in `README.md`.
+---
 
-## Example
+## Contributing 🤝
 
-Before running the command:
+Contributions are welcome!  
+Please check the [CONTRIBUTING](CONTRIBUTING.md) file before submitting a pull request.
 
-```md
-![Version](https://img.shields.io/badge/version-v1.0.2-blue.svg)
-```
+---
 
-After running `bump 2.0.2`:
+## License 📜
 
-```md
-![Version](https://img.shields.io/badge/version-v2.0.2-blue.svg)
-```
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for details.
 
-## Running Tests
+---
 
-To run the test suite:
+## Bugs & Issues 🐞
 
-```bash
-npm test
-```
+If you find a bug or issue, report it via [GitHub Issues](https://github.com/AmJaradat01/version-bumpify/issues).
 
-This will execute the test cases to ensure the functionality of the bumpify.
+---
 
-## Contributing
-
-Contributions are welcome! For detailed contribution guidelines, please refer to the [CONTRIBUTING](CONTRIBUTING) file.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Bugs and Issues
-
-If you find any bugs or have issues, please report them via [GitHub Issues](https://github.com/AmJaradat01/version-bumpify/issues).
+🚀 **Happy Version Bumping!**

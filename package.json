@@ -1,19 +1,16 @@
 {
-  "name": "@amjaradat01/version-bumpify",
-  "version": "1.1.14",
-  "description": "A Node.js CLI tool to automatically update the version in package.json, package-lock.json, and the version badge in README.md",
+  "name": "version-bumpify",
+  "version": "1.2.0",
+  "description": "A Node.js CLI tool to automatically update version numbers in package.json, package-lock.json, and multiple README.md badges.",
   "bin": {
     "bumpify": "./bin/bumpify.js"
   },
   "scripts": {
-    "test": "jest"
+    "release": "git tag v$(node -p \"require('./package.json').version\") && git push origin --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/amjaradat01/version-bumpify.git"
-  },
-  "publishConfig": {
-    "registry": "https://gitlab.com/api/v4/projects/61514688/packages/npm/"
+    "url": "git+https://github.com/AmJaradat01/version-bumpify.git"
   },
   "keywords": [
     "version",
@@ -26,14 +23,15 @@
     "automation",
     "changelog",
     "npm",
-    "cli-tool"
+    "cli-tool",
+    "semantic-versioning"
   ],
   "author": "Ali M. Jaradat <AmJaradat01@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/amjaradat01/version-bumpify/issues"
+    "url": "https://github.com/AmJaradat01/version-bumpify/issues"
   },
-  "homepage": "https://gitlab.com/amjaradat01/version-bumpify#readme",
+  "homepage": "https://github.com/AmJaradat01/version-bumpify#readme",
   "engines": {
     "node": ">=12.0.0"
   },
@@ -42,8 +40,10 @@
     "lib/",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
-    "jest": "^29.7.0",
     "mocha": "10.1.0"
   }
 }

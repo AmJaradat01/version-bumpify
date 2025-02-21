@@ -28,3 +28,5 @@ coverage/
 
 *.key
 *.tgz
+
+package-lock.json
