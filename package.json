@@ -1,6 +1,6 @@
 {
   "name": "version-bumpify",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A Node.js CLI tool to automatically update version numbers in package.json, package-lock.json, and multiple README.md badges.",
   "bin": {
     "bumpify": "./bin/bumpify.js"
