@@ -4,7 +4,6 @@
 ![npm](https://img.shields.io/npm/v/version-bumpify)
 ![npm](https://img.shields.io/npm/dm/version-bumpify)
 ![License](https://img.shields.io/npm/l/version-bumpify)
-[![GitLab CI status](https://gitlab.com/amjaradat01/version-bumpify/badges/main/pipeline.svg)](https://gitlab.com/AmJaradat01/version-bumpify/-/pipelines)
 
 A **Node.js CLI tool** to automatically update:
 - `package.json` and `package-lock.json` versions
